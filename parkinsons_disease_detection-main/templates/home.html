@@ -1,0 +1,29 @@
+{% include 'navbar.html' %}
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: url("{{ url_for('static', filename='image/PD_image.jpeg') }}") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: Arial;
+}
+
+.hero-box {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 15px;
+}
+</style>
+
+<div class="hero-box">
+    <h1>Parkinson's Disease Detection</h1>
+    <p>Early Detection Using Machine Learning</p>
+    <a href="/prediction" style="color: #00ccff; font-size: 20px;">Start Prediction →</a>
+</div>

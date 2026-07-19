@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="text-center mb-4 text-primary">Enter Patient Voice Parameters</h2>
+
+    <form action="/predict" method="POST">
+        <div class="row">
+            {% for feature in features %}
+            <div class="col-md-6 mb-3">
+                <label class="form-label">{{ feature }}</label>
+                <input type="number" step="any" class="form-control" name="{{ feature }}" placeholder="Enter {{ feature }}" required>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg mt-3">Predict Parkinson’s</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

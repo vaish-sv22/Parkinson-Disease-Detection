@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-center">
+    <div class="alert alert-{{ color }} shadow">
+        <h2 class="mb-2">{{ status }}</h2>
+        <p>{{ description }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow p-3 mb-4">
+            <h4 class="text-danger">⚠️ Common Symptoms</h4>
+            <ul class="list-group list-group-flush">
+                {% for s in symptoms %}
+                <li class="list-group-item">{{ s }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow p-3 mb-4">
+            <h4 class="text-success">💪 Precautions & Lifestyle Tips</h4>
+            <ul class="list-group list-group-flush">
+                {% for p in precautions %}
+                <li class="list-group-item">{{ p }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- <h3 style="margin-top:40px;">Algorithm Performance Comparison</h3>
+
+<img src="{{ url_for('static', filename=graph_image) }}" 
+     alt="Algorithm Comparison Graph"
+     style="width:70%; margin-top:20px; border-radius:10px;"> -->
+
+
+<div class="text-center mt-4">
+    <a href="/" class="btn btn-outline-primary">🔙 Back to Home</a>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
